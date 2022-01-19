@@ -26,10 +26,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::middleware(['auth'])->group(function ()
 {
     Route::get('/', [DashboardController::class, 'index']);
-    Route::get('/test', function ()
-    {
-        return view('content.example');
-    });
+    Route::get('/department',[DepartmentController::class, 'department']);
 });
 
 require __DIR__.'/auth.php';

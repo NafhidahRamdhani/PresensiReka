@@ -16902,7 +16902,7 @@ body.text-sm .control-sidebar {
 
 .navbar-blue.navbar-light .form-control-navbar,
 .navbar-blue.navbar-light .form-control-navbar + .input-group-append > .btn-navbar {
-  background-color: #1E88E5;
+  background-color: #0071eb;
   border-color: #0065d1;
   color: rgba(52, 58, 64, 0.8);
 }

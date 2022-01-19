@@ -14,44 +14,6 @@
                 <p></p>
             </div>
         </div>
-
-        <!-- ./col -->
-
-        <!-- ./col -->
-
-        <!-- ./col -->
-    </div>
-    <!-- /.row -->
-    <!-- Main row -->
-    <div class="row">
-        <!-- Left col -->
-
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
-
-            <!-- Map card -->
-                <!-- card tools -->
-
-                <!-- /.card-tools -->
-
-            <!-- /.card-body-->
-
-            <!-- /.card -->
-
-            <!-- solid sales graph -->
-
-            <!-- /.card-body -->
-
-            <!-- /.card-footer -->
-
-            <!-- /.card -->
-           
-            <!-- /.card-body -->
-         
-            <!-- /.card -->
-        </section>
-        <!-- right col -->
     </div>
     <!-- /.row (main row) -->
 </div>
