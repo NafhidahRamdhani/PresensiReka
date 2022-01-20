@@ -23,7 +23,7 @@ class DepartmentController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.department.add');
     }
 
     /**
@@ -34,7 +34,7 @@ class DepartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo "<pre>"; print_r($request); die;
     }
 
     /**
@@ -56,7 +56,7 @@ class DepartmentController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('content.department.edit');
     }
 
     /**
