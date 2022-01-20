@@ -3,6 +3,14 @@
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\LokasiController;
+use App\Http\Controllers\PresensiController;
+use App\Http\Controllers\ReportController;
+use App\Http\Controllers\ShiftController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +34,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::middleware(['auth'])->group(function ()
 {
     Route::get('/', [DashboardController::class, 'index']);
-    Route::get('/department',[DepartmentController::class, 'department']);
+    Route::resource('/department', DepartmentController::class);
+    Route::resource('/karyawan', KaryawanController::class);
+    Route::resource('/lokasi', LokasiController::class);
+    Route::resource('/presensi', PresensiController::class);
+    Route::resource('/report', ReportController::class);
+    Route::resource('/shift', ShiftController::class);
 });
 
 require __DIR__.'/auth.php';
