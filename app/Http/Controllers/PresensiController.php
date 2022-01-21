@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Presensi;
 use Illuminate\Http\Request;
 
 class PresensiController extends Controller
@@ -23,7 +24,7 @@ class PresensiController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.presensi.add');
     }
 
     /**
@@ -34,7 +35,11 @@ class PresensiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Presensi;
+        $data->nama = $request->presensi;
+        $data->save();
+        // dd($data); die;
+        return redirect()->route('presensi.index');
     }
 
     /**
