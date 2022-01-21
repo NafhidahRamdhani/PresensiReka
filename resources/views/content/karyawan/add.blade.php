@@ -18,7 +18,7 @@
     <div class="card-body">
         <div class="form-group">
             <label for="inputNumber">NIK</label>
-            <input type="number" name="angka" id="inputNumber" class="form-control">
+            <input type="number" name="nik" id="inputNumber" class="form-control">
             <p></p>
         </div>
         <div class="form-group">
