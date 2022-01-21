@@ -22,31 +22,22 @@
               </tr>
             </thead>
             <tbody>
+                @foreach ($data as $dpt)
+                <tr>
+                    <td>{{$dpt->nama}}</td>
+                    <td class="text-left py-0 align-middle">
+                        <div class="btn-group btn-group-sm">
+                            <a href="{{ route('department.edit', $dpt->id) }}" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
+                            <form action="{{ route('department.destroy', $dpt->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
 
-              <tr>
-                <td>Information Tecnology</td>
-                <td class="text-left py-0 align-middle">
-                  <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                  </div>
-                </td>
-              <tr>
-                <td>Human Resources & GA</td>
-                <td class="text-left py-0 align-middle">
-                  <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                  </div>
-                </td>
-              <tr>
-                <td>Accounting</td>
-                <td class="text-left py-0 align-middle">
-                  <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                  </div>
-                </td>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
           </table>
         </div>
