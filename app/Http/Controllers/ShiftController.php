@@ -16,7 +16,7 @@ class ShiftController extends Controller
     {
         $data = Shift::select()->get();
 
-        return view ('content.shift.shift');
+        return view('content.shift.shift')->with(compact('data'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ShiftController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.shift.add');
     }
 
     /**
@@ -38,7 +38,9 @@ class ShiftController extends Controller
     public function store(Request $request)
     {
         $data = new Shift;
-        $data->nama = $request->Shift;
+        $data->nama = $request->nama;
+        $data->jam_masuk = $request->jam_masuk;
+        $data->jam_keluar = $request->jam_keluar;
         $data->save();
         // dd($data); die;
         return redirect()->route('shift.index');

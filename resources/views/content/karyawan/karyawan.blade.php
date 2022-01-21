@@ -23,37 +23,22 @@
               </tr>
             </thead>
             <tbody>
+                @foreach ($data as $kry)
+                <tr>
+                    <td>{{$kry->nama}}</td>
+                    <td class="text-left py-0 align-middle">
+                        <div class="btn-group btn-group-sm">
+                            <a href="{{ route('karyawan.edit', $kry->id) }}" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
+                            <form action="{{ route('karyawan.destroy', $kry->id) }}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
 
-              <tr>
-                <td>Karyawan 123</td>
-                <td>Information Technology</td>
-                <td>Kelompok 3</td>
-                <td class="text-left py-0 align-middle">
-                  <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                  </div>
-                </td>
-              <tr>
-                <td>Karyawan 112</td>
-                <td>Human Resources & GA</td>
-                <td>Kelompok 3</td>
-                <td class="text-left py-0 align-middle">
-                  <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                  </div>
-                </td>
-              <tr>
-                <td>Karyawan 122</td>
-                <td>Accounting</td>
-                <td>Kelompok 2</td>
-                <td class="text-left py-0 align-middle">
-                  <div class="btn-group btn-group-sm">
-                    <a href="#" class="btn btn-info"><i class="fas fa-pencil-alt mr-1"></i></a>
-                    <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
-                  </div>
-                </td>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
+                @endforeach
             </tbody>
           </table>
         </div>
