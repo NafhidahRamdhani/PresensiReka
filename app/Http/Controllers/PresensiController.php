@@ -14,6 +14,8 @@ class PresensiController extends Controller
      */
     public function index()
     {
+        $data = Presensi::select()->get();
+
         return view('content.presensi.presensi')->with(compact('data'));
     }
 
@@ -75,7 +77,12 @@ class PresensiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        $data = Presensi::find($id);
+        // dd($data);
+        $data->save();
+        // dd($data);
+        return redirect()->route('presensi.index');
     }
 
     /**
