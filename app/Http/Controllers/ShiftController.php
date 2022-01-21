@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Shift;
 use Illuminate\Http\Request;
 
 class ShiftController extends Controller
@@ -13,6 +14,8 @@ class ShiftController extends Controller
      */
     public function index()
     {
+        $data = Shift::select()->get();
+
         return view ('content.shift.shift');
     }
 
@@ -34,7 +37,11 @@ class ShiftController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Shift;
+        $data->nama = $request->Shift;
+        $data->save();
+        // dd($data); die;
+        return redirect()->route('shift.index');
     }
 
     /**
@@ -56,7 +63,9 @@ class ShiftController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Shift::find($id);
+        // dd($data); die;
+        return view('content.shift.edit')->with(compact('data'));
     }
 
     /**
@@ -68,7 +77,13 @@ class ShiftController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+          // dd($request);
+          $data = Shift::find($id);
+          // dd($data);
+          $data->nama =$request->nama;
+          $data->save();
+          // dd($data);
+          return redirect()->route('shift.index');
     }
 
     /**
@@ -79,6 +94,8 @@ class ShiftController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Shift::find($id);
+        $data->delete();
+        return redirect()->route('shift.index');
     }
 }
