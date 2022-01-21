@@ -7,7 +7,7 @@
       </div>
       <div class="col-sm-6">
         <ol class="float-sm-right">
-            <button class="btn btn-secondary">Tambah</button>
+            <a href="{{route('lokasi.create')}}"><button class="btn btn-secondary">Tambah</button>
         </ol>
       </div>
     </div>
