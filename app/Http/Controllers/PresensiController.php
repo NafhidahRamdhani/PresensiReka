@@ -14,7 +14,7 @@ class PresensiController extends Controller
      */
     public function index()
     {
-        return view('content.presensi.presensi');
+        return view('content.presensi.presensi')->with(compact('data'));
     }
 
     /**
@@ -61,7 +61,9 @@ class PresensiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Presensi::find($id);
+        // dd($data); die;
+        return view('content.presensi.edit')->with(compact('data'));
     }
 
     /**
@@ -84,6 +86,8 @@ class PresensiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Presensi::find($id);
+        $data->delete();
+        return redirect()->route('presensi.index');
     }
 }
