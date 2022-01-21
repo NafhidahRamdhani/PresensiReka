@@ -80,6 +80,7 @@ class PresensiController extends Controller
         // dd($request);
         $data = Presensi::find($id);
         // dd($data);
+        $data->nama=$request->nama;
         $data->save();
         // dd($data);
         return redirect()->route('presensi.index');

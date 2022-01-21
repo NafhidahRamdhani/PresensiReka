@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Lokasi;
 use Illuminate\Http\Request;
 
 class LokasiController extends Controller
@@ -23,7 +24,7 @@ class LokasiController extends Controller
      */
     public function create()
     {
-        //
+        return view('content.lokasi.add');
     }
 
     /**
@@ -34,7 +35,9 @@ class LokasiController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = new Lokasi;
+        $data->nama = $request->nama;
+
     }
 
     /**
@@ -56,7 +59,9 @@ class LokasiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Lokasi::find($id);
+        // dd($data); die;
+        return view('content.lokasi.edit');
     }
 
     /**
@@ -68,7 +73,13 @@ class LokasiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        $data = Lokasi::find($id);
+        // dd($data);
+        $data->nama =$request->nama;
+        $data->save();
+        // dd($data);
+        return redirect()->route('lokasi.index');
     }
 
     /**
@@ -79,6 +90,8 @@ class LokasiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $data = Lokasi::find($id);
+        $data->delete();
+        return redirect()->route('lokasi.index');
     }
 }
