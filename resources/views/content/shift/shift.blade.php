@@ -17,8 +17,8 @@
                     <thead>
                         <tr>
                             <th>Kelompok Shift</th>
-                            <th>Jam Mulai</th>
-                            <th>Jam Selesai</th>
+                            <th>Jam Masuk</th>
+                            <th>Jam Pulang</th>
                             <th>Opsi</th>
                             <th></th>
                         </tr>

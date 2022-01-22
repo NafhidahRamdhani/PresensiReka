@@ -27,7 +27,7 @@
                     <input type="time" name="jam_masuk" id="inputJam" class="form-control">
                 </div>
             <div class="form-group">
-                    <label for="inputJamKel">Jam Keluar</label>
+                    <label for="inputJamKel">Jam Pulang</label>
                     <input type="time" name="jam_keluar" id="inputJamKel" class="form-control"> <br><br>
                     <p></p>
                     <button class="btn btn-danger" value="Submit">Submit</button></a>

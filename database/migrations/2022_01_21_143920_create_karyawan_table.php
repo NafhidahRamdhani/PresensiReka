@@ -15,13 +15,13 @@ class CreateKaryawanTable extends Migration
     {
         Schema::create('karyawan', function (Blueprint $table) {
             $table->id();
-            $table->string('nik');
+            $table->integer('nik');
             $table->string('name');
             $table->string('alamat');
             $table->string('no');
             $table->string('email');
-            $table->foreignId('department');
-            $table->foreignId('shift');
+            $table->integer('department');
+            $table->integer('shift');
             $table->string('uname');
             $table->string('pass');
             $table->timestamps();
