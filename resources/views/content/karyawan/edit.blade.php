@@ -61,7 +61,12 @@
         </div>
         <div class="form-group">
             <label for="inputNumber">Password</label>
-            <input type="password" name="pass" id="inputNumber" class="form-control"> <br><br>
+            <input type="password" name="pass" id="inputNumber" class="form-control"> 
+            <p></p>
+        </div>
+        <div class="form-group">
+            <label for="inputGambar">Pilih Foto</label>
+            <input type="file" name="file_gambar" accept="image/*"  id="inputGambar" class="form-control"> <br><br>
             <p></p>
         </div>
         <button class="btn btn-danger" value="Submit">Tambah</button></a>

@@ -52,7 +52,9 @@ class PresensiController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Presensi::find($id);
+        // dd($data); die;
+        return view('content.presensi.detail')->with(compact('data'));
     }
 
     /**

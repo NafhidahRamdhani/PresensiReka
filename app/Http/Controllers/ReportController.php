@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Report;
 use Illuminate\Http\Request;
 
 class ReportController extends Controller
@@ -13,7 +14,9 @@ class ReportController extends Controller
      */
     public function index()
     {
-        return view ('content.report.report');
+        $data = Report::select()->get();
+        // dd($data); die;
+        return view ('content.report.report')->with(compact('data'));
     }
 
     /**
