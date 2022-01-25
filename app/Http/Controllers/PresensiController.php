@@ -16,7 +16,7 @@ class PresensiController extends Controller
     {
         $data = Presensi::select()->get();
 
-        return view('content.presensi.presensi')->with(compact('data'));
+        return view('content.presensi.masuk');
     }
 
     /**

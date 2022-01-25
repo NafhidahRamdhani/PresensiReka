@@ -37,9 +37,10 @@ Route::middleware(['auth'])->group(function ()
     Route::resource('/department', DepartmentController::class);
     Route::resource('/karyawan', KaryawanController::class);
     Route::resource('/lokasi', LokasiController::class);
-    Route::resource('/presensi', PresensiController::class);
+    Route::resource('/presensi-masuk', PresensiController::class);
     Route::resource('/report', ReportController::class);
     Route::resource('/shift', ShiftController::class);
 });
 
-require __DIR__.'/auth.php';
+
+require __DIR__ . '/auth.php';
